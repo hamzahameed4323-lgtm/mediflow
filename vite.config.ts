@@ -4,11 +4,9 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import laravel from 'laravel-vite-plugin';
 import { bunny } from 'laravel-vite-plugin/fonts';
-import { defineConfig, type Plugin } from 'vite';
+import { defineConfig } from 'vite';
 
-const isDev = process.env.NODE_ENV !== 'production';
-
-export default defineConfig({
+export default defineConfig(({ command }) => ({
     plugins: [
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.tsx'],
@@ -27,7 +25,7 @@ export default defineConfig({
         }),
         tailwindcss(),
         // Only run wayfinder in dev — in production we rely on pre-generated files
-        ...(isDev
+        ...(command === 'serve'
             ? [
                   wayfinder({
                       formVariants: true,
@@ -36,4 +34,4 @@ export default defineConfig({
               ]
             : []),
     ],
-});
+}));
