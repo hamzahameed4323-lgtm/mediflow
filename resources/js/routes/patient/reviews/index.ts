@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Http\Controllers\ReviewController::store
  * @see app/Http/Controllers/ReviewController.php:21
- * @route 'http://cms.test/patient/appointments/{appointment}/review'
+ * @route '/patient/appointments/{appointment}/review'
  */
 export const store = (args: { appointment: number | { id: number } } | [appointment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: store.url(args, options),
@@ -11,13 +11,13 @@ export const store = (args: { appointment: number | { id: number } } | [appointm
 
 store.definition = {
     methods: ["post"],
-    url: 'http://cms.test/patient/appointments/{appointment}/review',
+    url: '/patient/appointments/{appointment}/review',
 } satisfies RouteDefinition<["post"]>
 
 /**
 * @see \App\Http\Controllers\ReviewController::store
  * @see app/Http/Controllers/ReviewController.php:21
- * @route 'http://cms.test/patient/appointments/{appointment}/review'
+ * @route '/patient/appointments/{appointment}/review'
  */
 store.url = (args: { appointment: number | { id: number } } | [appointment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -50,7 +50,7 @@ store.url = (args: { appointment: number | { id: number } } | [appointment: numb
 /**
 * @see \App\Http\Controllers\ReviewController::store
  * @see app/Http/Controllers/ReviewController.php:21
- * @route 'http://cms.test/patient/appointments/{appointment}/review'
+ * @route '/patient/appointments/{appointment}/review'
  */
 store.post = (args: { appointment: number | { id: number } } | [appointment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: store.url(args, options),
@@ -60,7 +60,7 @@ store.post = (args: { appointment: number | { id: number } } | [appointment: num
     /**
 * @see \App\Http\Controllers\ReviewController::store
  * @see app/Http/Controllers/ReviewController.php:21
- * @route 'http://cms.test/patient/appointments/{appointment}/review'
+ * @route '/patient/appointments/{appointment}/review'
  */
     const storeForm = (args: { appointment: number | { id: number } } | [appointment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: store.url(args, options),
@@ -70,7 +70,7 @@ store.post = (args: { appointment: number | { id: number } } | [appointment: num
             /**
 * @see \App\Http\Controllers\ReviewController::store
  * @see app/Http/Controllers/ReviewController.php:21
- * @route 'http://cms.test/patient/appointments/{appointment}/review'
+ * @route '/patient/appointments/{appointment}/review'
  */
         storeForm.post = (args: { appointment: number | { id: number } } | [appointment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: store.url(args, options),
@@ -81,7 +81,7 @@ store.post = (args: { appointment: number | { id: number } } | [appointment: num
 /**
 * @see \App\Http\Controllers\ReviewController::update
  * @see app/Http/Controllers/ReviewController.php:48
- * @route 'http://cms.test/patient/reviews/{review}'
+ * @route '/patient/reviews/{review}'
  */
 export const update = (args: { review: number | { id: number } } | [review: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
@@ -90,13 +90,13 @@ export const update = (args: { review: number | { id: number } } | [review: numb
 
 update.definition = {
     methods: ["put"],
-    url: 'http://cms.test/patient/reviews/{review}',
+    url: '/patient/reviews/{review}',
 } satisfies RouteDefinition<["put"]>
 
 /**
 * @see \App\Http\Controllers\ReviewController::update
  * @see app/Http/Controllers/ReviewController.php:48
- * @route 'http://cms.test/patient/reviews/{review}'
+ * @route '/patient/reviews/{review}'
  */
 update.url = (args: { review: number | { id: number } } | [review: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -129,7 +129,7 @@ update.url = (args: { review: number | { id: number } } | [review: number | { id
 /**
 * @see \App\Http\Controllers\ReviewController::update
  * @see app/Http/Controllers/ReviewController.php:48
- * @route 'http://cms.test/patient/reviews/{review}'
+ * @route '/patient/reviews/{review}'
  */
 update.put = (args: { review: number | { id: number } } | [review: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
     url: update.url(args, options),
@@ -139,7 +139,7 @@ update.put = (args: { review: number | { id: number } } | [review: number | { id
     /**
 * @see \App\Http\Controllers\ReviewController::update
  * @see app/Http/Controllers/ReviewController.php:48
- * @route 'http://cms.test/patient/reviews/{review}'
+ * @route '/patient/reviews/{review}'
  */
     const updateForm = (args: { review: number | { id: number } } | [review: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: update.url(args, {
@@ -154,7 +154,7 @@ update.put = (args: { review: number | { id: number } } | [review: number | { id
             /**
 * @see \App\Http\Controllers\ReviewController::update
  * @see app/Http/Controllers/ReviewController.php:48
- * @route 'http://cms.test/patient/reviews/{review}'
+ * @route '/patient/reviews/{review}'
  */
         updateForm.put = (args: { review: number | { id: number } } | [review: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: update.url(args, {

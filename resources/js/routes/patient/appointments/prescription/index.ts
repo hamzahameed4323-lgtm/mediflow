@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Http\Controllers\Pdf\PdfController::pdf
  * @see app/Http/Controllers/Pdf/PdfController.php:15
- * @route 'http://cms.test/patient/appointments/{appointment}/prescription/pdf'
+ * @route '/patient/appointments/{appointment}/prescription/pdf'
  */
 export const pdf = (args: { appointment: number | { id: number } } | [appointment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: pdf.url(args, options),
@@ -11,13 +11,13 @@ export const pdf = (args: { appointment: number | { id: number } } | [appointmen
 
 pdf.definition = {
     methods: ["get","head"],
-    url: 'http://cms.test/patient/appointments/{appointment}/prescription/pdf',
+    url: '/patient/appointments/{appointment}/prescription/pdf',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Http\Controllers\Pdf\PdfController::pdf
  * @see app/Http/Controllers/Pdf/PdfController.php:15
- * @route 'http://cms.test/patient/appointments/{appointment}/prescription/pdf'
+ * @route '/patient/appointments/{appointment}/prescription/pdf'
  */
 pdf.url = (args: { appointment: number | { id: number } } | [appointment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -50,7 +50,7 @@ pdf.url = (args: { appointment: number | { id: number } } | [appointment: number
 /**
 * @see \App\Http\Controllers\Pdf\PdfController::pdf
  * @see app/Http/Controllers/Pdf/PdfController.php:15
- * @route 'http://cms.test/patient/appointments/{appointment}/prescription/pdf'
+ * @route '/patient/appointments/{appointment}/prescription/pdf'
  */
 pdf.get = (args: { appointment: number | { id: number } } | [appointment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: pdf.url(args, options),
@@ -59,7 +59,7 @@ pdf.get = (args: { appointment: number | { id: number } } | [appointment: number
 /**
 * @see \App\Http\Controllers\Pdf\PdfController::pdf
  * @see app/Http/Controllers/Pdf/PdfController.php:15
- * @route 'http://cms.test/patient/appointments/{appointment}/prescription/pdf'
+ * @route '/patient/appointments/{appointment}/prescription/pdf'
  */
 pdf.head = (args: { appointment: number | { id: number } } | [appointment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: pdf.url(args, options),
@@ -69,7 +69,7 @@ pdf.head = (args: { appointment: number | { id: number } } | [appointment: numbe
     /**
 * @see \App\Http\Controllers\Pdf\PdfController::pdf
  * @see app/Http/Controllers/Pdf/PdfController.php:15
- * @route 'http://cms.test/patient/appointments/{appointment}/prescription/pdf'
+ * @route '/patient/appointments/{appointment}/prescription/pdf'
  */
     const pdfForm = (args: { appointment: number | { id: number } } | [appointment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: pdf.url(args, options),
@@ -79,7 +79,7 @@ pdf.head = (args: { appointment: number | { id: number } } | [appointment: numbe
             /**
 * @see \App\Http\Controllers\Pdf\PdfController::pdf
  * @see app/Http/Controllers/Pdf/PdfController.php:15
- * @route 'http://cms.test/patient/appointments/{appointment}/prescription/pdf'
+ * @route '/patient/appointments/{appointment}/prescription/pdf'
  */
         pdfForm.get = (args: { appointment: number | { id: number } } | [appointment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: pdf.url(args, options),
@@ -88,7 +88,7 @@ pdf.head = (args: { appointment: number | { id: number } } | [appointment: numbe
             /**
 * @see \App\Http\Controllers\Pdf\PdfController::pdf
  * @see app/Http/Controllers/Pdf/PdfController.php:15
- * @route 'http://cms.test/patient/appointments/{appointment}/prescription/pdf'
+ * @route '/patient/appointments/{appointment}/prescription/pdf'
  */
         pdfForm.head = (args: { appointment: number | { id: number } } | [appointment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: pdf.url(args, {

@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Http\Controllers\AdminController::status
  * @see app/Http/Controllers/AdminController.php:341
- * @route 'http://cms.test/admin/appointments/{appointment}/status'
+ * @route '/admin/appointments/{appointment}/status'
  */
 export const status = (args: { appointment: number | { id: number } } | [appointment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: status.url(args, options),
@@ -11,13 +11,13 @@ export const status = (args: { appointment: number | { id: number } } | [appoint
 
 status.definition = {
     methods: ["post"],
-    url: 'http://cms.test/admin/appointments/{appointment}/status',
+    url: '/admin/appointments/{appointment}/status',
 } satisfies RouteDefinition<["post"]>
 
 /**
 * @see \App\Http\Controllers\AdminController::status
  * @see app/Http/Controllers/AdminController.php:341
- * @route 'http://cms.test/admin/appointments/{appointment}/status'
+ * @route '/admin/appointments/{appointment}/status'
  */
 status.url = (args: { appointment: number | { id: number } } | [appointment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -50,7 +50,7 @@ status.url = (args: { appointment: number | { id: number } } | [appointment: num
 /**
 * @see \App\Http\Controllers\AdminController::status
  * @see app/Http/Controllers/AdminController.php:341
- * @route 'http://cms.test/admin/appointments/{appointment}/status'
+ * @route '/admin/appointments/{appointment}/status'
  */
 status.post = (args: { appointment: number | { id: number } } | [appointment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: status.url(args, options),
@@ -60,7 +60,7 @@ status.post = (args: { appointment: number | { id: number } } | [appointment: nu
     /**
 * @see \App\Http\Controllers\AdminController::status
  * @see app/Http/Controllers/AdminController.php:341
- * @route 'http://cms.test/admin/appointments/{appointment}/status'
+ * @route '/admin/appointments/{appointment}/status'
  */
     const statusForm = (args: { appointment: number | { id: number } } | [appointment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: status.url(args, options),
@@ -70,7 +70,7 @@ status.post = (args: { appointment: number | { id: number } } | [appointment: nu
             /**
 * @see \App\Http\Controllers\AdminController::status
  * @see app/Http/Controllers/AdminController.php:341
- * @route 'http://cms.test/admin/appointments/{appointment}/status'
+ * @route '/admin/appointments/{appointment}/status'
  */
         statusForm.post = (args: { appointment: number | { id: number } } | [appointment: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: status.url(args, options),
