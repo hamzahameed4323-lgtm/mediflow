@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
         $this->configureDefaults();
         $this->configureMailTransports();
 
-        if (! app()->isProduction() && request()->getHost()) {
+        if (! $this->app->runningInConsole() && ! app()->isProduction() && request()->getHost()) {
             config(['app.url' => request()->getSchemeAndHttpHost()]);
             URL::forceRootUrl(request()->getSchemeAndHttpHost());
         }

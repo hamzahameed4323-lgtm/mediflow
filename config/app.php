@@ -52,7 +52,14 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => (function () {
+        $url = env('APP_URL');
+        if (! is_string($url) || trim($url) === '' || in_array(trim($url), ['https://', 'http://', 'https:/', 'http:/'], true) || ! filter_var($url, FILTER_VALIDATE_URL)) {
+            return 'http://localhost';
+        }
+
+        return $url;
+    })(),
 
     /*
     |--------------------------------------------------------------------------
